@@ -109,3 +109,41 @@ export function getColouringProperties({
 
   return arrayToCSS(properties);
 }
+
+export function getGridProperties({
+  columns,
+  rows,
+  autoColumns,
+  autoRows,
+  columnGap,
+  rowGap,
+  gap,
+  xAlign,
+  yAlign,
+  align,
+  xAlignSelf,
+  yAlignSelf,
+  alignSelf
+}) {
+  const properties = [];
+  properties.push('display: grid');
+  // TODO: Support for arrays?
+  if (columns) properties.push(`grid-template-columns: ${columns}`);
+  if (rows) properties.push(`grid-template-rows: ${rows}`);
+  if (autoColumns) properties.push(`grid-auto-columns: ${autoColumns}`);
+  if (autoRows) properties.push(`grid-auto-rows: ${autoRows}`);
+
+  if (columnGap) properties.push(`grid-column-gap: ${columnGap}`);
+  if (rowGap) properties.push(`grid-row-gap: ${rowGap}`);
+  if (gap) properties.push(`grid-gap: ${gap}`);
+
+  if (xAlign) properties.push(`justify-items: ${xAlign}`);
+  if (yAlign) properties.push(`align-items: ${yAlign}`);
+  if (align) properties.push(`place-items: ${align}`);
+
+  if (xAlignSelf) properties.push(`justify-content: ${xAlignSelf}`);
+  if (yAlignSelf) properties.push(`align-content: ${yAlignSelf}`);
+  if (alignSelf) properties.push(`place-content: ${alignSelf}`);
+
+  return arrayToCSS(properties);
+}
