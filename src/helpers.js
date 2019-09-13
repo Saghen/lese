@@ -4,6 +4,10 @@ export function arrayToCSS(array) {
   return `${array.join(";")};`;
 }
 
+export function returnDefault(property, type, defaultValue) {
+  return typeof property === type ? property : defaultValue;
+}
+
 export function getFlexProperties({
   column,
   xAlign,
@@ -78,10 +82,6 @@ export function getSizeProperties({
     else properties.push(`height: ${height}`);
   }
   return arrayToCSS(properties);
-}
-
-function returnDefault(property, type, defaultValue) {
-  return typeof property === type ? property : defaultValue;
 }
 
 export function getLayoutProperties({ padding, margin, position }) {
