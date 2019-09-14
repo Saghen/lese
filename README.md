@@ -105,3 +105,45 @@ Resets the margins of the immediate children using `> * { margin: 0; }`.
 
 ### `wrap: Boolean | String`
 Sets the flex-wrap css property. Defaults to "wrap" when set to `true`.
+
+## Grid
+🚨 Note: This API is still very incomplete and subject to change drastically. Many features are planned for quick auto columns and auto rows as well as support for arrays. For now, it is simply short hands and a few defaults.
+
+### `columns: String`
+Shorthand for `grid-template-columns`
+
+### `rows: String`
+Shorthand for `grid-template-rows`
+
+### `autoColumns: String`
+Shorthand for `grid-auto-columns`
+
+### `autoRows: String`
+Shorthand for `grid-auto-rows`
+
+### `columnGap: String`
+Shorthand for `grid-column-gap`
+
+### `rowGap: String`
+Shorthand for `grid-row-gap`
+
+### `gap: String`
+Shorthand for `grid-gap`
+
+### `xAlign: Boolean | String`
+Shorthand for `justify-items`. Defaults to `center` when set to true.
+
+### `yAlign: Boolean | String`
+Shorthand for `align-items`. Defaults to `center` when set to true.
+
+### `align: Boolean | String`
+Shorthand for `place-items`. Defaults to `center center` when set to true.
+
+### `xAlignSelf: Boolean | String`
+Shorthand for `justify-content`. Defaults to `center` when set to true.
+
+### `yAlignSelf: Boolean | String`
+Shorthand for `align-content`. Defaults to `center` when set to true.
+
+### `alignSelf: Boolean | String`
+Shorthand for `place-content`. Defaults to `center center` when set to true.
