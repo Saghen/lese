@@ -167,4 +167,10 @@ Sets the padding to `12px 36px` when set to true. Otherwise, the button will def
 ### `noHover: Boolean`
 Removes the hover effect when set to `true`
 
-##
+## Link
+
+### `color: String`
+Sets the color of the link. This property is used for the underline effect as well.
+
+### `noUnderline: Boolean`
+When set to true, the underline effect is disabled.
