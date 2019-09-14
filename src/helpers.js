@@ -84,14 +84,14 @@ export function getSizeProperties({
   return arrayToCSS(properties);
 }
 
-export function getLayoutProperties({ padding, margin, border, position, display }) {
+export function getLayoutProperties({ padding, margin, border, position, relative, display }) {
   const properties = [];
   if (padding) properties.push(`padding: ${padding}`);
   if (margin) properties.push(`margin: ${margin}`);
   if (border) properties.push(`border: ${border}`);
   if (display) properties.push(`display: ${display}`);
 
-  position = position && returnDefault(position, "string", "relative");
+  position = position || relative && returnDefault(position, "string", "relative");
   if (position) properties.push(`position: ${position}`);
   return arrayToCSS(properties);
 }
