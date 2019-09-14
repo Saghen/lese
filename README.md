@@ -174,3 +174,15 @@ Sets the color of the link. This property is used for the underline effect as we
 
 ### `noUnderline: Boolean`
 When set to true, the underline effect is disabled.
+
+## Image
+A basic responsive image component
+
+### `responsive: Boolean`
+Sets the `max-width` of the image to `100%`
+
+### `center: Boolean`
+Sets the `object-position` to `center`
+
+### `cover: Boolean`
+Sets the `object-fit` to `cover`
