@@ -1,7 +1,7 @@
 {
   "name": "lese",
   "version": "0.0.9",
-  "description": "A tiny <2kb framework for layouts in styled-components",
+  "description": "A tiny <2kb framework for layouts in @emotion/styled",
   "keywords": [
     "responsive",
     "layout",
