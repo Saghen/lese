@@ -15,7 +15,7 @@ export default styled(Base).attrs(({ secondary, text, background, wide }) => {
   const border = `2px solid ${secondary ? text : background}`;
 
   return {
-    display: 'inline-block',
+    inlineBlock: true,
     as: 'a',
     text,
     background,

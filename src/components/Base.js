@@ -2,7 +2,7 @@ import {
   getTextProperties,
   getSizeProperties,
   getLayoutProperties,
-  getColouringProperties
+  getCosmeticProperties
 } from "../helpers";
 
 import styled, { css } from "styled-components";
@@ -11,5 +11,5 @@ export default styled.div`
   ${getLayoutProperties}
   ${getSizeProperties}
   ${getTextProperties}
-  ${getColouringProperties}
+  ${getCosmeticProperties}
 `;

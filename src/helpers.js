@@ -8,6 +8,54 @@ export function returnDefault(property, type, defaultValue) {
   return typeof property === type ? property : defaultValue;
 }
 
+export function getTextProperties({
+  color,
+  fontSize,
+  fontDecoration,
+  fontWeight
+}) {
+  const properties = [];
+  if (color) properties.push(`color: ${color}`);
+  if (fontSize) properties.push(`font-size: ${fontSize}`);
+  if (fontDecoration) properties.push(`font-decoration: ${fontDecoration}`);
+  if (fontWeight) properties.push(`font-weight: ${fontWeight}`);
+
+  return arrayToCSS(properties);
+}
+
+export function getSizeProperties({
+  height,
+  width,
+  responsive,
+  padding,
+  margin
+}) {
+  const properties = [];
+  if (width) {
+    if (responsive) properties.push(`max-width: ${width}`, `width: 100%`);
+    else properties.push(`width: ${width}`);
+  }
+  if (height) {
+    if (responsive) properties.push(`max-height: ${height}`, `height: 100%`);
+    else properties.push(`height: ${height}`);
+  }
+
+  if (padding) properties.push(`padding: ${padding}`);
+  if (margin) properties.push(`margin: ${margin}`);
+  return arrayToCSS(properties);
+}
+
+export function getLayoutProperties({ relative, block, inlineBlock }) {
+  const properties = [];
+
+  if (block) properties.push(`display: block`);
+  if (inlineBlock) properties.push(`display: inline-block`);
+
+  if (relative) properties.push(`position: relative`);
+
+  return arrayToCSS(properties);
+}
+
 export function getFlexProperties({
   column,
   xAlign,
@@ -51,63 +99,12 @@ export function getFlexProperties({
   return arrayToCSS(properties);
 }
 
-export function getTextProperties({
-  color,
-  fontSize,
-  fontDecoration,
-  fontWeight
-}) {
+// TODO: Rename this function to something other than "Colouring" <- Cosmetic
+export function getCosmeticProperties({ border, background, borderRadius }) {
   const properties = [];
-  if (fontSize) properties.push(`font-size: ${fontSize}`);
-  if (fontDecoration) properties.push(`font-decoration: ${fontDecoration}`);
-  if (fontWeight) properties.push(`font-weight: ${fontWeight}`);
-
-  return arrayToCSS(properties);
-}
-
-export function getSizeProperties({
-  height,
-  width,
-  responsive,
-  padding,
-  margin
-}) {
-  const properties = [];
-  if (width) {
-    if (responsive) properties.push(`max-width: ${width}`, `width: 100%`);
-    else properties.push(`width: ${width}`);
-  }
-  if (height) {
-    if (responsive) properties.push(`max-height: ${height}`, `height: 100%`);
-    else properties.push(`height: ${height}`);
-  }
-  return arrayToCSS(properties);
-}
-
-export function getLayoutProperties({ padding, margin, border, position, relative, display }) {
-  const properties = [];
-  if (padding) properties.push(`padding: ${padding}`);
-  if (margin) properties.push(`margin: ${margin}`);
   if (border) properties.push(`border: ${border}`);
-  if (display) properties.push(`display: ${display}`);
-
-  position = position || relative && returnDefault(position, "string", "relative");
-  if (position) properties.push(`position: ${position}`);
-  return arrayToCSS(properties);
-}
-
-// TODO: Rename this function to something other than "Colouring"
-export function getColouringProperties({
-  background,
-  backgroundColor,
-  backgroundImage,
-  color
-}) {
-  const properties = [];
-  if (color) properties.push(`color: ${color}`);
+  if (borderRadius) properties.push(`border-radius: ${borderRadius}`);
   if (background) properties.push(`background: ${background}`);
-  if (backgroundColor) properties.push(`background-color: ${backgroundColor}`);
-  if (backgroundImage) properties.push(`background-image: ${backgroundImage}`);
 
   return arrayToCSS(properties);
 }
@@ -128,7 +125,7 @@ export function getGridProperties({
   alignSelf
 }) {
   const properties = [];
-  properties.push('display: grid');
+  properties.push("display: grid");
   // TODO: Support for arrays?
   if (columns) properties.push(`grid-template-columns: ${columns}`);
   if (rows) properties.push(`grid-template-rows: ${rows}`);
