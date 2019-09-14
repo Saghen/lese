@@ -83,3 +83,25 @@ Changes the border radius of the element.
 
 ### `background: String`
 Changes the background of the element.
+
+## Container
+
+The quick and easy to use flex container. Inherits all properties from Base.
+
+### `column: Boolean`
+Sets the flex-direction to column
+
+### `xAlign: Boolean | String`
+Based on the column boolean, xAlign will automatically switch between justify-content (row) and align-items (column). Sets to "center" by default when set to `true`. Otherwise, it passes the string to the appropriate css property.
+
+### `yAlign: Boolean | String`
+Based on the column boolean, xAlign will automatically switch between align-items (row) and justify-content (column). Sets to "center" by default when set to `true`. Otherwise, it passes the string to the appropriate css property.
+
+### `separation: String`
+Based on the column boolean, separation will use margin-top (column) or margin-left (row) on its immediate children on all but the first child using `* + *`. The value of the string will be passed to the appropriate css property.
+
+### `resetMargin: Boolean`
+Resets the margins of the immediate children using `> * { margin: 0; }`.
+
+### `wrap: Boolean | String`
+Sets the flex-wrap css property. Defaults to "wrap" when set to `true`.
