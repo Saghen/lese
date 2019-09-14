@@ -5,7 +5,7 @@ import {
   getCosmeticProperties
 } from "../helpers";
 
-import styled, { css } from "styled-components";
+import styled from "@emotion/styled";
 
 export default styled.div`
   ${getLayoutProperties}

@@ -1,6 +1,6 @@
 {
   "name": "lese",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "A tiny <2kb framework for layouts in styled-components",
   "keywords": [
     "responsive",
@@ -14,8 +14,7 @@
   ],
   "main": "src/index.js",
   "scripts": {
-    "build": "parcel build src/index.js",
-    "test": "parcel src/test/index.html"
+    "build": "parcel build src/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,11 +27,17 @@
   },
   "homepage": "https://github.com/Saghen/lese#readme",
   "peerDependencies": {
-    "styled-components": ">= 4.3.0",
     "react": ">= 16.3.0",
-    "react-dom": ">= 16.3.0"
+    "react-dom": ">= 16.3.0",
+    "@emotion/styled": ">=^10.0.0",
+    "@emotion/core": ">= ^10.0.0"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.17",
+    "@emotion/styled": "^10.0.17",
+    "react": "^16.9.0"
   }
 }

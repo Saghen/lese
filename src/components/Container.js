@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "@emotion/styled";
 import Base from "./Base";
 
 import { getFlexProperties } from "../helpers";

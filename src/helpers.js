@@ -1,5 +1,3 @@
-import styled, { css } from "styled-components";
-
 export function arrayToCSS(array) {
   return `${array.join(";")};`;
 }
@@ -35,7 +33,6 @@ function propertyGenerator(keys) {
 
       props[key] && properties.push(`${camelToKebab(key)}: ${props[key]};`);
     }
-    console.log(properties);
     return arrayToCSS(properties);
   };
 }

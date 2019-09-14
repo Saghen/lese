@@ -1,38 +1,23 @@
-import styled, { css } from "styled-components";
+import styled from "@emotion/styled";
 import Container from "./Container";
 
-const backgroundDefault = "#000";
-const textDefault = "#fff";
+function getButtonProperties({ secondary, text, background, wide, noHover }) {
+  return {
+    color: secondary ? background : text,
+    background: secondary ? "transparent" : background,
+    border: `2px solid ${background}`,
+    padding: wide ? "12px 36px" : "12px 24px",
+    transition: "0.2s all",
+    cursor: "pointer",
+    textAlign: "center",
+    ":hover": !noHover && {
+      backgroundColor: secondary ? background : "transparent",
+      color: secondary ? text : background
+    }
+  };
+}
 
-export default styled(Container).attrs(
-  ({ secondary, text, background, wide }) => {
-    const propText = text || textDefault;
-    const propBackground = background || backgroundDefault;
+const Button = styled(Container)(getButtonProperties).withComponent("a");
+Button.defaultProps = { background: "#000", text: "#fff", yAlign: true };
 
-    text = secondary ? propBackground : propText;
-    background = secondary ? propText : propBackground;
-
-    return {
-      as: "a",
-      yAlign: true,
-      text,
-      background,
-      border: `2px solid ${secondary ? text : background}`,
-      color: text,
-      padding: wide ? "12px 36px" : "12px 24px"
-    };
-  }
-)`
-  transition: 0.2s all;
-  cursor: pointer;
-  text-align: center;
-
-  ${({ noHover }) =>
-    !noHover &&
-    css`
-      :hover {
-        background-color: ${({ text }) => text};
-        color: ${({ background }) => background};
-      }
-    `}
-`;
+export default Button;

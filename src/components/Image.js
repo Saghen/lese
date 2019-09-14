@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "@emotion/styled";
 import { returnDefault } from "../helpers";
 
 export default styled.img`

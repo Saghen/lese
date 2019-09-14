@@ -1,35 +1,29 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import Base from "./Base";
 
-const colorDefault = "#0000EE";
-
-export default styled(Base).attrs(props => {
-  props.color = props.color || colorDefault;
-
+function getLinkProperties({ color, noUnderline }) {
   return {
-    as: "a",
-    color: props.color,
-    relative: true,
-    display: "inline-block"
+    color,
+    textDecoration: "none",
+    cursor: "pointer",
+    "::after": !noUnderline && {
+      content: '""',
+      backgroundColor: color,
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      right: 0,
+      height: "1px",
+      width: 0,
+      transition: "0.2s width"
+    },
+    ":hover::after": {
+      width: "100%"
+    }
   };
-})`
-  text-decoration: none;
-  cursor: pointer;
+}
 
-  ::after {
-    ${({ underline }) =>
-      underline || (underline === undefined && "content: '';")}
-    background-color: ${props => props.color};
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    width: 0;
-    transition: 0.2s width;
-  }
+const Link = styled(Base)(getLinkProperties).withComponent("a");
+Link.defaultProps = { relative: true, inlineBlock: true, color: "#0000EE" }
 
-  :hover::after {
-    width: 100%;
-  }
-`;
+export default Link;
