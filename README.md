@@ -8,7 +8,7 @@
 
 Easy to use and lightweight layout framework for @emotion/styled.
 
-Lese was inspired after using Laco, an extremely lightweight package for state management, with React. Lese's goal is to provide a powerful set of tools to quickly build layouts in emotion's styled components while being just under 2KBs in size when gzipped. The project is in early alpha so bugs and breaking API changes are to be expected between minor releases.
+Lese was inspired after using Laco, an extremely lightweight package for state management, with React. Lese's goal is to provide a powerful set of tools to quickly build layouts in emotion's styled components while being just under 2KBs in size when gzipped. The modern flex and grid specifications are excellent. Thus the framework provides very little abstraction on top of these specs and instead provides convenient shorthand properties to make responsive layouts a breeze. The project is in early alpha so bugs and breaking API changes are to be expected between minor releases.
 
 ## To-Do
 
