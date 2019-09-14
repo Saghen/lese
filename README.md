@@ -27,7 +27,9 @@ Lese was inspired after using Laco, an extremely lightweight package for state m
 
 ## How It Works
 
-All components (aside from image) inherit from the Base component which includes convienence props for responsive sizing, text modification, and sizing.
+All components (aside from image) inherit from the Base component which includes convienence props for responsive sizing, text modification, and sizing. The framework's goal is not to provide a layer of abstraction over the existing css properties (beyond x and yAlign) but rather to provide easy to use short hand properties.
+
+> The more I use CSS Grid, the more convinced I am that there is no benefit to be had by adding a layer of abstraction over it. CSS Grid is the layout framework baked right into the browser - Jen Simmons
 
 # API
 
