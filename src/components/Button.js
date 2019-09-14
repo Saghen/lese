@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
 import Container from "./Container";
 
-function getButtonProperties({ secondary, accent, color, wide, noHover }) {
+function getButtonProperties({ secondary, accent, color, wide, padding, noHover }) {
   return {
     color: secondary ? accent : color,
     background: secondary ? "transparent" : accent,
     border: `2px solid ${accent}`,
-    padding: wide ? "12px 36px" : "12px 24px",
+    padding: wide ? "12px 36px" : padding || "12px 24px",
     transition: "0.2s all",
     cursor: "pointer",
     textAlign: "center",
