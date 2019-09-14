@@ -1,8 +1,6 @@
 import styled, { css } from "styled-components";
 import Container from "./Container";
 
-import { arrayToCSS } from "../helpers";
-
 const backgroundDefault = "#000";
 const textDefault = "#fff";
 
@@ -13,14 +11,13 @@ export default styled(Container).attrs(
 
     text = secondary ? propBackground : propText;
     background = secondary ? propText : propBackground;
-    const border = `2px solid ${secondary ? text : background}`;
 
     return {
       as: "a",
       yAlign: true,
       text,
       background,
-      border,
+      border: `2px solid ${secondary ? text : background}`,
       color: text,
       padding: wide ? "12px 36px" : "12px 24px"
     };
