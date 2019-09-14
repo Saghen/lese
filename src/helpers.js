@@ -81,7 +81,7 @@ export function getFlexProperties({
     );
   if (yAlign)
     properties.push(
-      !column ? `align-items: ${xAlign}` : `justify-content: ${xAlign}`
+      !column ? `align-items: ${yAlign}` : `justify-content: ${yAlign}`
     );
 
   if (separation)
