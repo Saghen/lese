@@ -48,7 +48,7 @@ export function getFlexProperties({
       `
     );
 
-  arrayToCSS(properties);
+  return arrayToCSS(properties);
 }
 
 export function getTextProperties({
@@ -84,12 +84,14 @@ export function getSizeProperties({
   return arrayToCSS(properties);
 }
 
-export function getLayoutProperties({ padding, margin, position }) {
+export function getLayoutProperties({ padding, margin, border, position, display }) {
   const properties = [];
   if (padding) properties.push(`padding: ${padding}`);
   if (margin) properties.push(`margin: ${margin}`);
+  if (border) properties.push(`border: ${border}`);
+  if (display) properties.push(`display: ${display}`);
 
-  position = returnDefault(position, "string", "relative");
+  position = position && returnDefault(position, "string", "relative");
   if (position) properties.push(`position: ${position}`);
   return arrayToCSS(properties);
 }
