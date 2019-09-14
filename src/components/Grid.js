@@ -6,7 +6,7 @@ import { propertyGenerator } from "../helpers";
 const getGridProperties = propertyGenerator([
   ["columns", { property: "grid-template-columns" }],
   ["rows", { property: "grid-template-rows" }],
-  ["autoColumns", { property: "grid-auto-column" }],
+  ["autoColumns", { property: "grid-auto-columns" }],
   ["autoRows", { property: "grid-auto-rows" }],
   ["columnGap", { property: "grid-column-gap" }],
   ["rowGap", { property: "grid-row-gap" }],
