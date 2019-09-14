@@ -1,8 +1,8 @@
-export function arrayToCSS(array) {
+function arrayToCSS(array) {
   return `${array.join(";")};`;
 }
 
-export function returnDefault(property, defaultValue) {
+function returnDefault(property, defaultValue) {
   return typeof property === "string" ? property : defaultValue;
 }
 
@@ -10,7 +10,7 @@ function camelToKebab(string) {
   return string.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, "$1-$2").toLowerCase();
 }
 
-function propertyGenerator(keys) {
+export function propertyGenerator(keys) {
   return props => {
     const properties = [];
     for (const key of keys) {
@@ -36,84 +36,3 @@ function propertyGenerator(keys) {
     return arrayToCSS(properties);
   };
 }
-
-export const getTextProperties = propertyGenerator([
-  "color",
-  "fontSize",
-  "fontDecoration",
-  "fontWeight"
-]);
-
-export const getSizeProperties = propertyGenerator([
-  [
-    "height",
-    ({ responsive, height }) =>
-      responsive ? `max-height: ${height}; height: 100%` : `height: ${height}`
-  ],
-  [
-    "width",
-    ({ responsive, width }) =>
-      responsive ? `max-width: ${width}; width: 100%` : `width: ${width}`
-  ],
-  "padding",
-  "margin"
-]);
-
-export const getLayoutProperties = propertyGenerator([
-  ["block", () => "display: block"],
-  ["inlineBlock", () => "display: inline-block"],
-  ["relative", () => "position: relative"]
-]);
-
-export const getCosmeticProperties = propertyGenerator([
-  "border",
-  "borderRadius",
-  "background"
-]);
-
-export const getFlexProperties = propertyGenerator([
-  ["column", () => "flex-direction: column"],
-  [
-    "xAlign",
-    {
-      default: "center",
-      handler: ({ column, xAlign }) =>
-        column ? `align-items: ${xAlign}` : `justify-content: ${xAlign}`
-    }
-  ],
-  [
-    "yAlign",
-    {
-      default: "center",
-      handler: ({ column, yAlign }) =>
-        !column ? `align-items: ${yAlign}` : `justify-content: ${yAlign}`
-    }
-  ],
-  [
-    "separation",
-    ({ column, separation }) => `
-    > * {
-       margin: 0;
-    }
-    > * + * {
-      ${column ? `margin-top: ${separation}` : `margin-left: ${separation}`}
-    }`
-  ],
-  ["wrap", { default: "wrap", property: "flex-wrap" }]
-]);
-
-export const getGridProperties = propertyGenerator([
-  ["columns", { property: "grid-template-columns" }],
-  ["rows", { property: "grid-template-rows" }],
-  ["autoColumns", { property: "grid-auto-column" }],
-  ["autoRows", { property: "grid-auto-rows" }],
-  ["columnGap", { property: "grid-column-gap" }],
-  ["rowGap", { property: "grid-row-gap" }],
-  ["gap", { property: "grid-gap" }],
-  ["xAlign", { property: "justify-items", default: "center" }],
-  ["yAlign", { property: "align-items", default: "center" }],
-  ["align", { property: "place-items", default: "center center" }],
-  ["xAlignSelf", { property: "justify-content", default: "center" }],
-  ["yAlignSelf", { property: "align-content", default: "center" }],
-  ["alignSelf", { property: "place-content", default: "center center" }]
-]);
