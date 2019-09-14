@@ -147,3 +147,24 @@ Shorthand for `align-content`. Defaults to `center` when set to true.
 
 ### `alignSelf: Boolean | String`
 Shorthand for `place-content`. Defaults to `center center` when set to true.
+
+## Button
+A simple button component with togglable hover effects.
+
+### `color: String`
+Sets the color of the button. Note: this must be set as a prop and will not be inherited. This is subject to change.
+
+### `accent: String`
+The accent color of the button. Applies to the background and border properties.
+
+### `secondary: Boolean`
+`false - Default`: Filled background with hover effect to transparent with border.
+`true`: Border with hover effect to filled background.
+
+### `wide: Boolean`
+Sets the padding to `12px 36px` when set to true. Otherwise, the button will default to the padding prop or `12px 24px`
+
+### `noHover: Boolean`
+Removes the hover effect when set to `true`
+
+##
