@@ -6,24 +6,24 @@
 
 [![npm version](https://badge.fury.io/js/lese.svg)](https://badge.fury.io/js/lese)
 
-Easy to use and extremely lightweight layout framework built for styled-components and soon to be ported to emotion.
+Easy to use and lightweight layout framework for styled-components and soon to be ported to emotion.
 
-Lese was inspired after using Laco, an extremely lightweight package for state management with packages for inferno and react. Lese's goal is to provide a powerful set of tools to quickly build layouts in styled-components while being just under 2KBs in size when gzipped. The project is in early alpha so bugs and breaking API changes are to be expected between minor releases before the first major release.
+Lese was inspired after using Laco, an extremely lightweight package for state management, with React. Lese's goal is to provide a powerful set of tools to quickly build layouts in styled-components while being just under 2KBs in size when gzipped. The project is in early alpha so bugs and breaking API changes are to be expected between minor releases.
 
 ## To-Do
 
 - [x] Base Components
-- [ ] First Draw of Documentation
+- [ ] First Draft of Documentation
 - [ ] API Review
 - [ ] Convert to Typescript/Add type defintions
-- [ ] Convenience functions in helpers to reduce code size
+- [X] Convenience functions in helpers to reduce code size
 - [ ] Other? Make an issue or PR to request changes
 
 ## Features
 
 - 🔥 Extremely lightweight - <2KBs gzipped
 - 📦 Out of the box support for Grid and Flex
-- 🚀 Move from design to prototype faster
+- 🚀 Blazing fast development speed
 
 ## How It Works
 
