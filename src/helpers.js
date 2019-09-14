@@ -14,24 +14,35 @@ export function propertyGenerator(keys) {
   return props => {
     const properties = [];
     for (const key of keys) {
-      if (Array.isArray(key)) {
-        if (!props[key[0]]) continue;
+      // Exits
+      if (!props[key[0]]) continue;
 
-        if (typeof key[1] === "function") properties.push(key[1](props));
-        else if (typeof key[1] === "object") {
-          const options = key[1];
-          const property = options.property || camelToKebab(key[0]);
-          if (options.default)
-            props[key[0]] = returnDefault(props[key[0]], options.default);
-
-          if (typeof options.handler === "function")
-            properties.push(options.handler(props));
-          else properties.push(`${property}: ${props[key[0]]}`);
-        } else console.error(`Invalid options provided at key: ${key[0]}`);
+      if (!Array.isArray(key)) {
+        props[key] && properties.push(`${camelToKebab(key)}: ${props[key]};`);
         continue;
       }
 
-      props[key] && properties.push(`${camelToKebab(key)}: ${props[key]};`);
+      const isFunction = typeof key[1] === "function";
+      const isObject = typeof key[1] === "object";
+
+      if (!(isFunction || isObject)) {
+        console.error(`Invalid options provided at key: ${key[0]}`);
+        continue;
+      }
+
+      // All validated
+      if (isFunction) properties.push(key[1](props));
+
+      if (isObject) {
+        const options = key[1];
+        const property = options.property || camelToKebab(key[0]);
+        if (options.default)
+          props[key[0]] = returnDefault(props[key[0]], options.default);
+
+        if (typeof options.handler === "function")
+          properties.push(options.handler(props));
+        else properties.push(`${property}: ${props[key[0]]}`);
+      }
     }
     return arrayToCSS(properties);
   };
