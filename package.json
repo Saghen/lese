@@ -1,7 +1,17 @@
 {
   "name": "lese",
   "version": "0.0.7",
-  "description": "A tiny 6kb framework for layouts in styled-components",
+  "description": "A tiny <2kb framework for layouts in styled-components",
+  "keywords": [
+    "responsive",
+    "layout",
+    "framework",
+    "web",
+    "css-in-js",
+    "react",
+    "css",
+    "lese"
+  ],
   "main": "src/index.js",
   "scripts": {
     "build": "parcel build src/index.js",
