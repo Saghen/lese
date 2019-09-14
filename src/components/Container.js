@@ -24,11 +24,15 @@ const getFlexProperties = propertyGenerator([
   [
     "separation",
     ({ column, separation }) => `
-    > * {
-       margin: 0;
-    }
     > * + * {
       ${column ? `margin-top: ${separation}` : `margin-left: ${separation}`}
+    }`
+  ],
+  [
+    "resetMargin",
+    () => `
+    > * {
+       margin: 0;
     }`
   ],
   ["wrap", { default: "wrap", property: "flex-wrap" }]
