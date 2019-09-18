@@ -14,6 +14,11 @@ export function propertyGenerator(keys) {
   return props => {
     const properties = [];
     for (const key of keys) {
+      if (typeof key[0] === "function") {
+        properties.push(key[0](props));
+        continue;
+      }
+
       // Exits
       if (!props[key[0]]) continue;
 
@@ -21,6 +26,9 @@ export function propertyGenerator(keys) {
         props[key] && properties.push(`${camelToKebab(key)}: ${props[key]};`);
         continue;
       }
+
+
+
 
       const isFunction = typeof key[1] === "function";
       const isObject = typeof key[1] === "object";
