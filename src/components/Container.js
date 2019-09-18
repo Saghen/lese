@@ -22,6 +22,13 @@ const getFlexProperties = propertyGenerator([
     }
   ],
   [
+    ({ noMarginReset }) =>
+      !noMarginReset &&
+      `> * {
+       margin: 0;
+      }`
+  ],
+  [
     "separation",
     ({ column, separation }) => `
     > * + * {
@@ -29,13 +36,7 @@ const getFlexProperties = propertyGenerator([
     }
     `
   ],
-  [
-    ({ noMarginReset }) =>
-      !noMarginReset &&
-      `> * {
-       margin: 0;
-      }`
-  ],
+
   ["wrap", { default: "wrap", property: "flex-wrap" }]
 ]);
 

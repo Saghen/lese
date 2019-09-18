@@ -7,7 +7,7 @@ import { helpers, Base, Button, Container, Grid, Image, Link } from "../src/";
 
 render(
   <Container separation="16px">
-    <Container column xAlign>
+    <Container column xAlign separation="24px">
       <Button>Primary</Button>
       <Link href="#">
         Some Link
