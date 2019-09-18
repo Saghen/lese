@@ -10,6 +10,7 @@ function getButtonProperties({ secondary, accent, color, wide, padding, noHover 
     transition: "0.2s all",
     cursor: "pointer",
     textAlign: "center",
+    justifyContent: "center",
     ":hover": !noHover && {
       backgroundColor: secondary ? accent : "transparent",
       color: secondary ? color : accent
