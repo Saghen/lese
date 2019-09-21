@@ -6,7 +6,7 @@ import html from './index.html'
 import { helpers, Base, Button, Container, Grid, Image, Link } from "../src/";
 
 render(
-  <Container separation="16px">
+  <Container separation="16px" fontSize="0.8em">
     <Container column xAlign separation="24px">
       <Button>Primary</Button>
       <Link href="#">
