@@ -5,7 +5,8 @@ const getTextProperties = propertyGenerator([
   "color",
   "fontSize",
   "fontDecoration",
-  "fontWeight"
+  "fontWeight",
+  ["textAlign", { default: "center", property: "text-align" }]
 ]);
 
 const getSizeProperties = propertyGenerator([
