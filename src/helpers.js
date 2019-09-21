@@ -20,15 +20,13 @@ export function propertyGenerator(keys) {
       }
 
       // Exits
-      if (!props[key[0]]) continue;
+      if (!props[key[0]] && !props[key]) continue;
 
       if (!Array.isArray(key)) {
         props[key] && properties.push(`${camelToKebab(key)}: ${props[key]};`);
+        console.log(`${camelToKebab(key)}: ${props[key]};`);
         continue;
       }
-
-
-
 
       const isFunction = typeof key[1] === "function";
       const isObject = typeof key[1] === "object";
