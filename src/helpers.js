@@ -24,7 +24,6 @@ export function propertyGenerator(keys) {
 
       if (!Array.isArray(key)) {
         props[key] && properties.push(`${camelToKebab(key)}: ${props[key]};`);
-        console.log(`${camelToKebab(key)}: ${props[key]};`);
         continue;
       }
 
