@@ -5,6 +5,6 @@ import Button from './components/Button';
 import Image from './components/Image';
 import Link from './components/Link';
 
-import helpers from './helpers';
+import { propertyGenerator } from './helpers';
 
-export { Base, Container, Grid, Button, Image, Link, helpers }
+export { Base, Container, Grid, Button, Image, Link, propertyGenerator }
