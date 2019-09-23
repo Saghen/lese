@@ -1,9 +1,12 @@
 import styled from "@emotion/styled";
-import { returnDefault } from "../helpers";
+import { propertyGenerator } from "../helpers";
+
+const imageProperties = propertyGenerator([
+  ["responsive", () => "max-width: 100%;"],
+  ["center", () => "object-position: center;"],
+  ["cover", () => "object-fit: cover"]
+]);
 
 export default styled.img`
-  ${({ responsive }) => responsive && "max-width: 100%;"}
-  ${({ center }) => center && "object-position: center;"}
-  ${({ cover }) =>
-    cover && `object-fit: ${returnDefault(fit, "string", "cover")}`}
+  ${imageProperties}
 `;
