@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import Container from "./Container";
+import Container from "./Flex";
 
 function getButtonProperties({ secondary, accent, color, wide, padding, noHover }) {
   return {
@@ -11,6 +11,7 @@ function getButtonProperties({ secondary, accent, color, wide, padding, noHover 
     cursor: "pointer",
     textAlign: "center",
     justifyContent: "center",
+    textDecoration: "none",
     ":hover": !noHover && {
       backgroundColor: secondary ? accent : "transparent",
       color: secondary ? color : accent
