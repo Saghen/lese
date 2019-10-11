@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
 import Base from "./Base";
 
-function getLinkProperties({ color, noUnderline }) {
+function getLinkProperties({ color, underline, resetColor }) {
   return {
-    color,
+    color: resetColor ? 'inherit' : color,
     textDecoration: "none",
     cursor: "pointer",
-    "::after": !noUnderline && {
+    "::after": underline && {
       content: '""',
       backgroundColor: color,
       position: "absolute",
