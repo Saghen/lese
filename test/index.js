@@ -3,22 +3,22 @@ import { render } from "react-dom";
 
 import html from './index.html'
 
-import { helpers, Base, Button, Container, Grid, Image, Link } from "../src/";
+import { helpers, Base, Button, Flex, Grid, Image, Link } from "../src/";
 
 render(
-  <Container separation="16px" fontSize="0.8em">
-    <Container column xAlign separation="24px">
+  <Flex separation="16px" fontSize="0.8em">
+    <Flex column xAlign separation="24px">
       <Button>Primary</Button>
       <Link href="#">
         Some Link
       </Link>
-    </Container>
+    </Flex>
     <Grid columns="400px 400px" yAlign xAlign="start">
       <Button wide secondary>
         Button
       </Button>
       <Image src="https://i.imgur.com/ojJiFPT.png" responsive />
     </Grid>
-  </Container>,
+  </Flex>,
   document.querySelector("#root")
 );
