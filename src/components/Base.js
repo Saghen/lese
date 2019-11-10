@@ -4,8 +4,6 @@ import { propertyGenerator } from "../helpers";
 const getTextProperties = propertyGenerator([
   "color",
   "fontSize",
-  "fontDecoration",
-  "fontWeight",
   ["textAlign", { default: "center", property: "text-align" }]
 ]);
 
@@ -19,26 +17,15 @@ const getSizeProperties = propertyGenerator([
     "width",
     ({ responsive, width }) =>
       responsive ? `max-width: ${width}; width: 100%` : `width: ${width}`
-  ],
-  "padding",
-  "margin"
+  ]
 ]);
 
 const getLayoutProperties = propertyGenerator([
-  ["block", () => "display: block"],
-  ["inlineBlock", () => "display: inline-block"],
   ["relative", () => "position: relative"]
-]);
-
-const getCosmeticProperties = propertyGenerator([
-  "border",
-  "borderRadius",
-  "background"
 ]);
 
 export default styled.div`
   ${getLayoutProperties}
   ${getSizeProperties}
   ${getTextProperties}
-  ${getCosmeticProperties}
 `;
