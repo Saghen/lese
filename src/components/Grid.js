@@ -16,7 +16,24 @@ const getGridProperties = propertyGenerator([
   ["align", { property: "place-items", default: "center center" }]
 ]);
 
+const getChildGridProperties = propertyGenerator([
+  ["column", { property: "grid-column" }],
+  ["row", { property: "grid-row" }]
+]);
+
 export default styled(Base)`
   display: grid;
   ${getGridProperties}
+  ${({ children }) => {
+    if (!Array.isArray(children)) return;
+    const properties = [];
+    for (const [i, { props }] of children.entries())
+      if (props.column || props.row)
+        properties.push(`
+        > *:nth-child(${i + 1}) {
+          ${getChildGridProperties(props)}
+        }
+        `);
+    return properties;
+  }}
 `;
