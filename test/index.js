@@ -3,20 +3,15 @@ import { render } from "react-dom";
 
 import html from './index.html'
 
-import { helpers, Base, Button, Flex, Grid, Image, Link } from "../src/";
+import { helpers, Base, Flex, Grid, Image } from "../src/";
 
 render(
-  <Flex separation="16px" fontSize="0.8em">
+  <Flex separation="16px" fontSize="1.2em">
     <Flex column xAlign separation="24px">
-      <Button>Primary</Button>
-      <Link href="#">
-        Some Link
-      </Link>
+      <Flex xAlignSelf="center">Some test writing</Flex>
+      <Flex xAlignSelf="center">More writing</Flex>
     </Flex>
     <Grid columns="400px 400px" yAlign xAlign="start">
-      <Button wide secondary>
-        Button
-      </Button>
       <Image src="https://i.imgur.com/ojJiFPT.png" responsive />
     </Grid>
   </Flex>,
