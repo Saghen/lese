@@ -18,6 +18,7 @@ Lese was inspired after using Laco, an extremely lightweight package for state m
 - [ ] API Review
 - [ ] Convert to Typescript/Add type defintions
 - [X] Convenience functions in helpers to reduce code size
+- [ ] Properties for modifying position of flex and grid children
 - [ ] Other? Make an issue or PR to request changes
 
 ## Features
