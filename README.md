@@ -8,13 +8,13 @@
 
 Easy to use and lightweight layout framework for @emotion/styled.
 
-Lese was inspired after using Laco, an extremely lightweight package for state management, with React. Lese's goal is to provide a powerful set of tools to quickly build layouts in emotion's styled components while being just under 2KBs in size when gzipped. The modern flex and grid specifications are excellent. Thus the framework provides very little abstraction on top of these specs and instead provides convenient shorthand properties to make responsive layouts a breeze. The project is in early alpha so bugs and breaking API changes are to be expected between minor releases.
+Lese was inspired after using Laco, an extremely lightweight package for state management, with React. Lese's goal is to provide a powerful set of tools to quickly build layouts in emotion's styled components while being under 2KBs in size when gzipped. The modern flex and grid specifications are excellent. Thus the framework provides very little abstraction on top of these specs and instead provides convenient shorthand properties to make responsive layouts a breeze. The project is in early alpha so bugs and breaking API changes are to be expected between minor releases.
 
 ## To-Do
 
 - [x] Base Components
 - [x] Switch to @emotion/styled
-- [ ] First Draft of Documentation
+- [X] First Draft of Documentation
 - [ ] API Review
 - [ ] Convert to Typescript/Add type defintions
 - [X] Convenience functions in helpers to reduce code size
@@ -28,9 +28,13 @@ Lese was inspired after using Laco, an extremely lightweight package for state m
 
 ## How It Works
 
-All components (aside from image) inherit from the Base component which includes convienence props for responsive sizing, text modification, and sizing. The framework's goal is not to provide a layer of abstraction over the existing css properties (beyond x and yAlign) but rather to provide easy to use short hand properties.
+All components (aside from image) inherit from the Base component which includes convienence props for responsive sizing, text modification, and sizing. The framework's goal is not to provide a layer of abstraction over the existing css properties (beyond xAlign and yAlign) but rather to provide easy to use short hand properties.
 
 > The more I use CSS Grid, the more convinced I am that there is no benefit to be had by adding a layer of abstraction over it. CSS Grid is the layout framework baked right into the browser - Jen Simmons
+
+## The Future
+
+`lese` is planned to be the underlying framework of a future project called `morre` which will be a comprehensive UI Framework that aims to avoid the pitfalls popular frameworks such as Bootstrap by making custom styling and components using base styles and components easy and maintainable (no more `!important`). Before that project begins, the API for `lese` must be stable.
 
 # API
 
