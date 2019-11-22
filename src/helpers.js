@@ -23,7 +23,7 @@ export function propertyGenerator(keys) {
       if (!props[key[0]] && !props[key]) continue;
 
       if (!Array.isArray(key)) {
-        props[key] && properties.push(`${camelToKebab(key)}: ${props[key]};`);
+        props[key] && properties.push(`${camelToKebab(key)}: ${props[key]}`);
         continue;
       }
 
