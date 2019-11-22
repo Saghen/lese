@@ -13,10 +13,7 @@ const getGridProperties = propertyGenerator([
   ["gap", { property: "grid-gap" }],
   ["xAlign", { property: "justify-items", default: "center" }],
   ["yAlign", { property: "align-items", default: "center" }],
-  ["align", { property: "place-items", default: "center center" }],
-  ["xAlignSelf", { property: "justify-content", default: "center" }],
-  ["yAlignSelf", { property: "align-content", default: "center" }],
-  ["alignSelf", { property: "place-content", default: "center center" }]
+  ["align", { property: "place-items", default: "center center" }]
 ]);
 
 export default styled(Base)`

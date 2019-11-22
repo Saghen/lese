@@ -43,10 +43,8 @@ Contains all of the base props for all other components aside from the image com
 Changes the color of the children
 ### `fontSize: String`
 Changes the font size of the children
-### `fontDecoration: String`
-Changes the font decoration of the children
-### `fontWeight: String`
-Changes the font weight of the children
+### `textAlign: Boolean | String`
+Aligns the font by default to the center
 
 ### Size
 ### `height: String`
@@ -58,34 +56,11 @@ Changes the width of the element. Note: By default, this will use the `width` cs
 ### `responsive: Boolean`
 Modifies the width and height properties to use max-width and max-height to make the element responsive in situations where all the space to reach its maximum width is not avaliable.
 
-### `padding: String`
-Changes the padding of the element.
-
-### `margin: String`
-Changes the margin of the element.
-
 ### Layout
-### `block: Boolean`
-Short-hand property for applying `display: block`
-
-### `inlineBlock: Boolean`
-Short-hand property for applying `display: inline-block`
-
 ### `relative: Boolean`
 Short-hand property for applying `position: relative`
 
-### Cosmetic
-### `border: String`
-Changes the border of the element.
-
-### `borderRadius: String`
-Changes the border radius of the element.
-
-### `background: String`
-Changes the background of the element.
-
-## Container
-
+## Flex
 The quick and easy to use flex container. Inherits all properties from Base.
 
 ### `column: Boolean`
@@ -138,42 +113,6 @@ Shorthand for `align-items`. Defaults to `center` when set to true.
 
 ### `align: Boolean | String`
 Shorthand for `place-items`. Defaults to `center center` when set to true.
-
-### `xAlignSelf: Boolean | String`
-Shorthand for `justify-content`. Defaults to `center` when set to true.
-
-### `yAlignSelf: Boolean | String`
-Shorthand for `align-content`. Defaults to `center` when set to true.
-
-### `alignSelf: Boolean | String`
-Shorthand for `place-content`. Defaults to `center center` when set to true.
-
-## Button
-A simple button component with togglable hover effects.
-
-### `color: String`
-Sets the color of the button. Note: this must be set as a prop and will not be inherited. This is subject to change.
-
-### `accent: String`
-The accent color of the button. Applies to the background and border properties.
-
-### `secondary: Boolean`
-`false - Default`: Filled background with hover effect to transparent with border.
-`true`: Border with hover effect to filled background.
-
-### `wide: Boolean`
-Sets the padding to `12px 36px` when set to true. Otherwise, the button will default to the padding prop or `12px 24px`
-
-### `noHover: Boolean`
-Removes the hover effect when set to `true`
-
-## Link
-
-### `color: String`
-Sets the color of the link. This property is used for the underline effect as well.
-
-### `noUnderline: Boolean`
-When set to true, the underline effect is disabled.
 
 ## Image
 A basic responsive image component
