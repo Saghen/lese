@@ -18,7 +18,7 @@ const getFlexProperties = propertyGenerator([
     {
       default: "center",
       handler: ({ column, yAlign }) =>
-        !column ? `align-items: ${yAlign}` : `justify-content: ${yAlign}`
+        column ? `justify-content: ${yAlign}` : `align-items: ${yAlign}`
     }
   ],
   [
