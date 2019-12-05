@@ -23,8 +23,8 @@ const getSizeProperties = propertyGenerator([
 
 const getLayoutProperties = propertyGenerator([
   ["relative", () => "position: relative"],
-  ["margin", ({ margin }) => `margin: ${margin}`],
-  ["padding", ({ padding }) => `padding: ${padding}`]
+  "margin",
+  "padding"
 ]);
 
 export default styled("div", {
