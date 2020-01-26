@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "react-dom";
 
-import html from './index.html'
+import html from "./index.html";
 
-import { helpers, Base, Flex, Grid, Image } from "../src/";
+import { Base, Flex, Grid, Image } from "../src/";
 
 render(
   <Flex separation="16px" fontSize="1.2em">

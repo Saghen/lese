@@ -15,7 +15,8 @@
   "main": "src/index.js",
   "scripts": {
     "build": "parcel build src/index.js",
-    "test": "parcel ./test/index.html"
+    "test": "jest",
+    "example": "parcel ./example/index.html"
   },
   "repository": {
     "type": "git",
@@ -31,10 +32,18 @@
     "@emotion/styled": ">=^10.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "jest-emotion": "^10.0.27",
+    "jest-esm-transformer": "^1.0.0",
     "parcel-bundler": "^1.12.3",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "react-test-renderer": "^16.12.0"
   }
 }

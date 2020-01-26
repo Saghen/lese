@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`grid child props 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-columns: 10px 10px;
+  grid-template-rows: 10px 10px;
+}
+
+<div
+  className="emotion-0"
+>
+  <div
+    column="2"
+    row="2"
+  >
+    Test
+  </div>
+</div>
+`;
+
+exports[`grid layout props 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  grid-gap: 8px;
+}
+
+<div
+  className="emotion-0"
+>
+  <div>
+    Test
+  </div>
+</div>
+`;
+
+exports[`grid layout props 2`] = `
+.emotion-0 {
+  display: grid;
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+}
+
+<div
+  className="emotion-0"
+>
+  <div>
+    Test
+  </div>
+</div>
+`;
+
+exports[`grid layout props 3`] = `
+.emotion-0 {
+  display: grid;
+  justify-items: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  place-items: center center;
+}
+
+<div
+  className="emotion-0"
+>
+  <div>
+    Test
+  </div>
+</div>
+`;
+
+exports[`grid layout props 4`] = `
+.emotion-0 {
+  display: grid;
+  justify-items: stretch;
+  -webkit-align-items: end;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: end;
+  place-items: normal start;
+}
+
+<div
+  className="emotion-0"
+>
+  <div>
+    Test
+  </div>
+</div>
+`;
