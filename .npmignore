@@ -1,4 +1,7 @@
 test/
 .cache/
 dist/
+coverage/
+
 jest.config.js
+babel.config.js

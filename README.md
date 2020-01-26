@@ -3,7 +3,7 @@
 </p>
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=coverage&message=100%&color=success&style=flat-square">
-  <img src="https://img.shields.io/static/v1?label=version&message=0.3.1&color=blue&style=flat-square">
+  <img src="https://img.shields.io/static/v1?label=version&message=0.3.2&color=blue&style=flat-square">
 </p>
 # Lese
 
