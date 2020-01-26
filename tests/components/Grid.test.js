@@ -14,17 +14,13 @@ test("grid layout props", () => {
         columnGap="8px"
         rowGap="8px"
         gap="8px"
-      >
-        <div>Test</div>
-      </Grid>
+      ></Grid>
     )
     .toJSON();
 
   const treeAutoLayout = renderer
     .create(
-      <Grid autoColumns="auto" autoRows="auto">
-        <div>Test</div>
-      </Grid>
+      <Grid autoColumns="auto" autoRows="auto"></Grid>
     )
     .toJSON();
 
@@ -61,5 +57,19 @@ test("grid child props", () => {
     )
     .toJSON();
 
+  const treeMultiple = renderer
+    .create(
+      <Grid columns="10px 10px" rows="10px 10px">
+        <div column="2" row="2">
+          Test
+        </div>
+        <div column="2" row="2">
+          Test
+        </div>
+      </Grid>
+    )
+    .toJSON();
+
   expect(tree).toMatchSnapshot();
+  expect(treeMultiple).toMatchSnapshot();
 });

@@ -30,22 +30,36 @@ test("flex child props", () => {
   const treeColumn = renderer
     .create(
       <Flex column>
-        <div xAlignSelf="flex-start" yAlignSelf="flex-end">
+        <Flex xAlignSelf="flex-start" yAlignSelf="flex-end">
           Test
-        </div>
+        </Flex>
       </Flex>
     )
     .toJSON();
   const treeRow = renderer
     .create(
       <Flex>
-        <div xAlignSelf="flex-start" yAlignSelf="flex-end">
+        <Flex xAlignSelf="flex-start" yAlignSelf="flex-end">
           Test
-        </div>
+        </Flex>
+      </Flex>
+    )
+    .toJSON();
+
+  const treeMultiple = renderer
+    .create(
+      <Flex column>
+        <Flex xAlignSelf="flex-start" yAlignSelf="flex-end">
+          Test
+        </Flex>
+        <Flex xAlignSelf="flex-start" yAlignSelf="flex-end">
+          Test
+        </Flex>
       </Flex>
     )
     .toJSON();
 
   expect(treeColumn).toMatchSnapshot();
   expect(treeRow).toMatchSnapshot();
+  expect(treeMultiple).toMatchSnapshot();
 });

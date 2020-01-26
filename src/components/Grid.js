@@ -25,9 +25,10 @@ export default styled(Base)`
   display: grid;
   ${getGridProperties}
   ${({ children }) => {
-    if (!Array.isArray(children)) return;
+    if (!Array.isArray(children) && typeof children !== "object") return;
+    const childrenArray = Array.isArray(children) ? children : [children];
     const properties = [];
-    for (const [i, { props }] of children.entries())
+    for (const [i, { props }] of childrenArray.entries())
       if (props.column || props.row)
         properties.push(`
         > *:nth-child(${i + 1}) {

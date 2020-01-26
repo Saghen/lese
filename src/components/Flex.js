@@ -63,9 +63,10 @@ export default styled(Base)`
   display: flex;
   ${getFlexProperties}
   ${({ children, column }) => {
-    if (!Array.isArray(children)) return;
+    if (!Array.isArray(children) && typeof children !== "object") return;
+    const childrenArray = Array.isArray(children) ? children : [children];
     const properties = [];
-    for (const [i, { props }] of children.entries())
+    for (const [i, { props }] of childrenArray.entries())
       if (props.xAlignSelf || props.yAlignSelf)
         properties.push(`
         > *:nth-child(${i + 1}) {

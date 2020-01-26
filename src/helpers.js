@@ -30,10 +30,8 @@ export function propertyGenerator(keys) {
       const isFunction = typeof key[1] === "function";
       const isObject = typeof key[1] === "object";
 
-      if (!(isFunction || isObject)) {
-        console.error(`Invalid options provided at key: ${key[0]}`);
-        continue;
-      }
+      if (!(isFunction || isObject))
+        throw new TypeError(`Invalid options provided at key: ${key[0]}`);
 
       // All validated
       if (isFunction) properties.push(key[1](props));

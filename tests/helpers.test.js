@@ -52,3 +52,8 @@ test("handler via object and default", () => {
     "default-value: some-string;"
   );
 });
+
+test("invalid property key", () => {
+  const func = () => propertyGenerator([["value", "bad value"]])({ value: true });
+  expect(func).toThrowError(new TypeError(`Invalid options provided at key: value`))
+});
