@@ -1,4 +1,4 @@
-test/
+tests/
 .cache/
 dist/
 coverage/
