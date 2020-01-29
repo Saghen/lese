@@ -18,7 +18,7 @@ Lese was inspired after using Laco, an extremely lightweight package for state m
 - [x] Switch to @emotion/styled
 - [x] First Draft of Documentation
 - [X] API Review
-- [ ] Convert to Typescript/Add type defintions
+- [X] Add type defintions
 - [x] Convenience functions in helpers to reduce code size
 - [x] Properties for modifying position of flex and grid children
 
@@ -105,6 +105,10 @@ Resets the margins of the immediate children using `> * { margin: 0; }`.
 ### `wrap: Boolean | String`
 
 Sets the flex-wrap css property. Defaults to "wrap" when set to `true`.
+
+## Flex Child Properties
+
+The flex component also supports properties on child elements
 
 ## Grid
 
