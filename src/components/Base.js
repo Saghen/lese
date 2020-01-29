@@ -29,7 +29,7 @@ const getLayoutProperties = propertyGenerator([
 
 export default styled("div", {
   shouldForwardProp: prop =>
-    isPropValid(prop) && ['width', 'height', 'children'].indexOf(prop) !== -1
+    isPropValid(prop) && ["width", "height", "fontSize", "color"].indexOf(prop) === -1
 })`
   ${getLayoutProperties}
   ${getSizeProperties}
