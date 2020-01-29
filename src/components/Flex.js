@@ -67,7 +67,6 @@ export default styled(Base)`
     const childrenArray = Children.toArray(children).filter(
       elem => typeof elem !== "string"
     );
-    console.log(childrenArray);
 
     const properties = [];
     for (const [i, { props }] of childrenArray.entries())
