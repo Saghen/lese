@@ -23,11 +23,12 @@ const getFlexProperties = propertyGenerator([
     }
   ],
   [
-    ({ noMarginReset }) =>
-      !noMarginReset &&
-      `> * {
+    "noMarginReset",
+    {
+      default: `> * {
        margin: 0;
       }`
+    }
   ],
   [
     "separation",
