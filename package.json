@@ -29,7 +29,8 @@
   },
   "homepage": "https://github.com/Saghen/lese#readme",
   "peerDependencies": {
-    "@emotion/styled": ">=^10.0.0"
+    "@emotion/styled": ">=^10.0.0",
+    "@emotion/is-prop-valid": ">=^0.8.6"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
