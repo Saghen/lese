@@ -25,16 +25,20 @@ export default styled(Base)`
   display: grid;
   ${getGridProperties}
   ${({ children }) => {
-    if (!Array.isArray(children) && typeof children !== "object") return;
-    const childrenArray = Array.isArray(children) ? children : [children];
+    let childrenArray = [];
+    if (Array.isArray(children)) childrenArray = children;
+    else if (typeof children === "object") childrenArray = [children];
+
     const properties = [];
-    for (const [i, { props }] of childrenArray.entries())
+    for (const [i, { props }] of childrenArray.entries()) {
       if (props.column || props.row)
         properties.push(`
-        > *:nth-child(${i + 1}) {
+        > *:not(style):nth-of-type(${i + 1}) {
           ${getChildGridProperties(props)}
         }
         `);
+    }
+
     return properties;
   }}
 `;
