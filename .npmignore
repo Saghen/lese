@@ -2,6 +2,7 @@ tests/
 .cache/
 dist/
 coverage/
+example/
 
 jest.config.js
 babel.config.js
