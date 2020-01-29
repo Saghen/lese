@@ -110,6 +110,14 @@ Sets the flex-wrap css property. Defaults to "wrap" when set to `true`.
 
 The flex component also supports properties on child elements
 
+### `xAlign: Boolean | String`
+
+Based on the column boolean, xAlign will automatically switch between justify-self (row) and align-self (column). Sets to "center" by default when set to `true`. Otherwise, it passes the string to the appropriate css property.
+
+### `yAlign: Boolean | String`
+
+Based on the column boolean, xAlign will automatically switch between align-self (row) and justify-self (column). Sets to "center" by default when set to `true`. Otherwise, it passes the string to the appropriate css property.
+
 ## Grid
 
 ### `columns: String`
@@ -151,6 +159,18 @@ Shorthand for `align-items`. Defaults to `center` when set to true.
 ### `align: Boolean | String`
 
 Shorthand for `place-items`. Defaults to `center center` when set to true.
+
+## Grid Child Properties
+
+The grid component also supports properties on child elements
+
+### `column: String`
+
+Shorthand for `grid-column`
+
+### `row: String`
+
+Shorthand for `grid-row`
 
 ## Image
 
