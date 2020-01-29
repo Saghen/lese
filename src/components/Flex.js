@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Base from "./Base";
+import { Children } from 'react';
 
 import { propertyGenerator } from "../helpers";
 
@@ -63,12 +64,7 @@ export default styled(Base)`
   display: flex;
   ${getFlexProperties}
   ${({ children, column }) => {
-    let childrenArray = [];
-    if (Array.isArray(children))
-      childrenArray = children.filter(
-        elem => !Array.isArray(elem) && typeof elem === "object"
-      );
-    else if (typeof children === "object") childrenArray = [children];
+    const childrenArray = Children.toArray(children);
 
     const properties = [];
     for (const [i, { props }] of childrenArray.entries())
