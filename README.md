@@ -17,11 +17,10 @@ Lese was inspired after using Laco, an extremely lightweight package for state m
 - [x] Base Components
 - [x] Switch to @emotion/styled
 - [x] First Draft of Documentation
-- [ ] API Review
+- [X] API Review
 - [ ] Convert to Typescript/Add type defintions
 - [x] Convenience functions in helpers to reduce code size
 - [x] Properties for modifying position of flex and grid children
-- [ ] Other? Make an issue or PR to request changes
 
 ## Features
 
@@ -108,8 +107,6 @@ Resets the margins of the immediate children using `> * { margin: 0; }`.
 Sets the flex-wrap css property. Defaults to "wrap" when set to `true`.
 
 ## Grid
-
-🚨 Note: This API is still very incomplete and subject to change drastically. Many features are planned for quick auto columns and auto rows as well as support for arrays. For now, it is simply short hands and a few defaults.
 
 ### `columns: String`
 
