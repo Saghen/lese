@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import Base from "./Base";
 
+import { Children } from "react";
 import { propertyGenerator } from "../helpers";
 
 const getGridProperties = propertyGenerator([
@@ -25,7 +26,9 @@ export default styled(Base)`
   display: grid;
   ${getGridProperties}
   ${({ children }) => {
-    const childrenArray = Children.toArray(children);
+    const childrenArray = Children.toArray(children).filter(
+      elem => typeof elem !== "string"
+    );
 
     const properties = [];
     for (const [i, { props }] of childrenArray.entries()) {
