@@ -64,7 +64,10 @@ export default styled(Base)`
   ${getFlexProperties}
   ${({ children, column }) => {
     let childrenArray = [];
-    if (Array.isArray(children)) childrenArray = children;
+    if (Array.isArray(children))
+      childrenArray = children.filter(
+        elem => !Array.isArray(elem) && typeof elem === "object"
+      );
     else if (typeof children === "object") childrenArray = [children];
 
     const properties = [];
