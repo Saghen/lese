@@ -8,7 +8,7 @@ expect.extend(matchers);
 test("flex props", () => {
   const treeColumn = renderer
     .create(
-      <Flex column xAlign="flex-start" yAlign="flex-end" separation="16px">
+      <Flex column xAlign="flex-start" yAlign="flex-end" separation="16px" noMarginReset>
         <div>Test</div>
       </Flex>
     )

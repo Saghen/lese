@@ -11,11 +11,7 @@ exports[`flex child props 1`] = `
   flex-direction: column;
 }
 
-.emotion-1 > * {
-  margin: 0;
-}
-
-.emotion-1 > *:nth-child(1) {
+.emotion-1 > *:not(style):nth-of-type(1) {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
@@ -27,10 +23,6 @@ exports[`flex child props 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.emotion-0 > * {
-  margin: 0;
 }
 
 <div
@@ -52,10 +44,6 @@ exports[`flex child props 2`] = `
   display: flex;
 }
 
-.emotion-0 > * {
-  margin: 0;
-}
-
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -63,11 +51,7 @@ exports[`flex child props 2`] = `
   display: flex;
 }
 
-.emotion-1 > * {
-  margin: 0;
-}
-
-.emotion-1 > *:nth-child(1) {
+.emotion-1 > *:not(style):nth-of-type(1) {
   justify-self: flex-start;
   -webkit-align-self: flex-end;
   -ms-flex-item-align: end;
@@ -93,10 +77,6 @@ exports[`flex child props 3`] = `
   display: flex;
 }
 
-.emotion-0 > * {
-  margin: 0;
-}
-
 .emotion-2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -107,18 +87,14 @@ exports[`flex child props 3`] = `
   flex-direction: column;
 }
 
-.emotion-2 > * {
-  margin: 0;
-}
-
-.emotion-2 > *:nth-child(1) {
+.emotion-2 > *:not(style):nth-of-type(1) {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
   justify-self: flex-end;
 }
 
-.emotion-2 > *:nth-child(2) {
+.emotion-2 > *:not(style):nth-of-type(2) {
   -webkit-align-self: flex-start;
   -ms-flex-item-align: start;
   align-self: flex-start;
@@ -194,10 +170,6 @@ exports[`flex props 2`] = `
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-}
-
-.emotion-0 > * {
-  margin: 0;
 }
 
 .emotion-0 > * + * {
