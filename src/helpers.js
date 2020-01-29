@@ -14,11 +14,6 @@ export function propertyGenerator(keys) {
   return props => {
     const properties = [];
     for (const key of keys) {
-      if (typeof key[0] === "function") {
-        properties.push(key[0](props));
-        continue;
-      }
-
       // Exits
       if (!props[key[0]] && !props[key]) continue;
 
