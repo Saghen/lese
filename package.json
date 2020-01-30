@@ -15,7 +15,7 @@
   "main": "src/index.js",
   "typings": "./src/index.d.ts",
   "scripts": {
-    "build": "parcel build src/index.js",
+    "build": "babel src -d dist",
     "test": "jest",
     "example": "parcel ./example/index.html"
   },
@@ -34,6 +34,7 @@
     "@emotion/is-prop-valid": ">=^0.8.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
