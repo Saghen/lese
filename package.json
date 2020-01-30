@@ -1,6 +1,6 @@
 {
   "name": "lese",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A tiny <2kb framework for layouts in @emotion/styled",
   "keywords": [
     "responsive",
