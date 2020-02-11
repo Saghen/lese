@@ -69,7 +69,7 @@ export default styled(Base)`
 
     const properties = [];
     for (const [i, { props }] of childrenArray.entries())
-      if (props.xAlignSelf || props.yAlignSelf)
+      if ((props && props.xAlignSelf) || props.yAlignSelf)
         properties.push(`
         > *:not(style):nth-of-type(${i + 1}) {
           ${getChildFlexProperties({ ...props, column })}

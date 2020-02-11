@@ -1,0 +1,8 @@
+tests/
+.cache/
+coverage/
+example/
+src/
+
+jest.config.js
+babel.config.js

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`image props 1`] = `
+.emotion-0 {
+  max-width: 100%;
+  object-position: center;
+  object-fit: cover;
+}
+
+<img
+  className="emotion-0"
+  src="http://example.com/example.png"
+/>
+`;
