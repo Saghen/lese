@@ -71,7 +71,7 @@ export default styled(Base)`
     for (const [i, { props }] of childrenArray.entries())
       if (props && (props.xAlignSelf || props.yAlignSelf))
         properties.push(`
-        > *:not(style):nth-of-type(${i + 1}) {
+        > *:nth-child(${i + 1}) /* emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason */ {
           ${getChildFlexProperties({ ...props, column })}
         }
         `);

@@ -14,12 +14,12 @@ const getGridProperties = propertyGenerator([
   ["gap", { property: "grid-gap" }],
   ["xAlign", { property: "justify-items", default: "center" }],
   ["yAlign", { property: "align-items", default: "center" }],
-  ["align", { property: "place-items", default: "center center" }]
+  ["align", { property: "place-items", default: "center center" }],
 ]);
 
 const getChildGridProperties = propertyGenerator([
   ["column", { property: "grid-column" }],
-  ["row", { property: "grid-row" }]
+  ["row", { property: "grid-row" }],
 ]);
 
 export default styled(Base)`
@@ -27,14 +27,14 @@ export default styled(Base)`
   ${getGridProperties}
   ${({ children }) => {
     const childrenArray = Children.toArray(children).filter(
-      elem => typeof elem !== "string"
+      (elem) => typeof elem !== "string"
     );
 
     const properties = [];
     for (const [i, { props }] of childrenArray.entries()) {
       if (props.column || props.row)
         properties.push(`
-        > *:not(style):nth-of-type(${i + 1}) {
+        > *:nth-child(${i + 1}) /* emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason */ {
           ${getChildGridProperties(props)}
         }
         `);
