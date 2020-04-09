@@ -11,22 +11,22 @@ const getFlexProperties = propertyGenerator([
     {
       default: "center",
       handler: ({ column, xAlign }) =>
-        column ? `align-items: ${xAlign}` : `justify-content: ${xAlign}`
-    }
+        column ? `align-items: ${xAlign}` : `justify-content: ${xAlign}`,
+    },
   ],
   [
     "yAlign",
     {
       default: "center",
       handler: ({ column, yAlign }) =>
-        column ? `justify-content: ${yAlign}` : `align-items: ${yAlign}`
-    }
+        column ? `justify-content: ${yAlign}` : `align-items: ${yAlign}`,
+    },
   ],
   [
     "noMarginReset",
     () => `> * {
        margin: 0;
-      }`
+      }`,
   ],
   [
     "separation",
@@ -34,10 +34,10 @@ const getFlexProperties = propertyGenerator([
     > * + * {
       ${column ? `margin-top: ${separation}` : `margin-left: ${separation}`}
     }
-    `
+    `,
   ],
 
-  ["wrap", { default: "wrap", property: "flex-wrap" }]
+  ["wrap", { default: "wrap", property: "flex-wrap" }],
 ]);
 
 const getChildFlexProperties = propertyGenerator([
@@ -46,17 +46,17 @@ const getChildFlexProperties = propertyGenerator([
     {
       default: "center",
       handler: ({ column, xAlignSelf }) =>
-        column ? `align-self: ${xAlignSelf}` : `justify-self: ${xAlignSelf}`
-    }
+        column ? `align-self: ${xAlignSelf}` : `justify-self: ${xAlignSelf}`,
+    },
   ],
   [
     "yAlignSelf",
     {
       default: "center",
       handler: ({ column, yAlignSelf }) =>
-        column ? `justify-self: ${yAlignSelf}` : `align-self: ${yAlignSelf}`
-    }
-  ]
+        column ? `justify-self: ${yAlignSelf}` : `align-self: ${yAlignSelf}`,
+    },
+  ],
 ]);
 
 export default styled(Base)`
@@ -64,12 +64,12 @@ export default styled(Base)`
   ${getFlexProperties}
   ${({ children, column }) => {
     const childrenArray = Children.toArray(children).filter(
-      elem => typeof elem !== "string"
+      (elem) => typeof elem !== "string"
     );
 
     const properties = [];
     for (const [i, { props }] of childrenArray.entries())
-      if ((props && props.xAlignSelf) || props.yAlignSelf)
+      if (props && (props.xAlignSelf || props.yAlignSelf))
         properties.push(`
         > *:not(style):nth-of-type(${i + 1}) {
           ${getChildFlexProperties({ ...props, column })}

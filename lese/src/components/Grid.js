@@ -18,8 +18,8 @@ const getGridProperties = propertyGenerator([
 ]);
 
 const getChildGridProperties = propertyGenerator([
-  ["columnSelf", { property: "grid-column" }],
-  ["rowSelf", { property: "grid-row" }]
+  ["column", { property: "grid-column" }],
+  ["row", { property: "grid-row" }]
 ]);
 
 export default styled(Base)`
