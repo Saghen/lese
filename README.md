@@ -164,11 +164,11 @@ Shorthand for `place-items`. Defaults to `center center` when set to true.
 
 The grid component also supports properties on child elements
 
-### `column: String`
+### `columnSelf: String`
 
 Shorthand for `grid-column`
 
-### `row: String`
+### `rowSelf: String`
 
 Shorthand for `grid-row`
 
