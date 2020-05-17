@@ -32,7 +32,7 @@ export default styled(Base)`
 
     const properties = [];
     for (const [i, { props }] of childrenArray.entries()) {
-      if (props.column || props.row)
+      if (props.columnSelf || props.rowSelf)
         properties.push(`
         > *:nth-child(${i + 1}) /* emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason */ {
           ${getChildGridProperties(props)}
