@@ -26,9 +26,10 @@ export default styled(Base)`
   display: grid;
   ${getGridProperties}
   ${({ children }) => {
-    const childrenArray = Children.toArray(children).filter(
-      (elem) => typeof elem !== "string"
-    );
+    const childrenArray = Children.toArray(children)
+      .filter((elem) => typeof elem !== "string")
+      .map((child) => (child.type === Fragment ? child.props.children ?? [] : child))
+      .flat();
 
     const properties = [];
     for (const [i, { props }] of childrenArray.entries()) {
