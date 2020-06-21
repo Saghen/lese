@@ -18,6 +18,7 @@ interface FlexChildProps {
 }
 
 interface FlexProps extends BaseProps {
+  column?: boolean
   xAlign?: boolean | string;
   yAlign?: boolean | string;
   noMarginReset?: boolean;
@@ -58,10 +59,11 @@ declare type PropertyHandler = (props: object) => string;
 interface PropertyOptions {
   default?: string;
   handler?: PropertyHandler;
+  property?: string
 }
 
 declare function propertyGenerator(
   properties: Array<[string, PropertyOptions | PropertyHandler]>
 );
 
-export { Base, Flex, Grid, Image, propertyGenerator };
+export { Base, BaseProps, Flex, FlexProps, FlexChildProps, Grid, GridProps, GridChildProps, Image, ImageProps, propertyGenerator };
