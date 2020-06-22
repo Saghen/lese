@@ -65,7 +65,7 @@ export default styled(Base)`
   ${({ children, column }) => {
     const childrenArray = Children.toArray(children)
       .filter((elem) => typeof elem !== "string")
-      .map((child) => (child.type === Fragment ? child.props.children ?? [] : child))
+      .map((child) => (child.type === Fragment ? child.props.children || [] : child))
       .flat();
 
     const properties = [];
