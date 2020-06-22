@@ -6,7 +6,7 @@ interface BaseProps {
   textAlign?: boolean | string;
   height?: string;
   width?: string;
-  position?: boolean;
+  relative?: boolean;
   margin?: string;
   padding?: string;
 }
