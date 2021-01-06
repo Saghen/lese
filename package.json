@@ -36,12 +36,13 @@
   "devDependencies": {
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
+    "@types/react": "^17.0.0",
     "babel-jest": "^25.1.0",
     "jest": "^25.1.0",
     "jest-emotion": "^10.0.27",
     "parcel-bundler": "^1.12.3",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-test-renderer": "^16.12.0"
   }
 }
