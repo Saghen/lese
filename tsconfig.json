@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2020",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "outDir": "dist/",
+    "declaration": true
+  },
+  "include": ["src/*.ts"]
+}

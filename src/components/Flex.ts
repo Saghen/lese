@@ -1,10 +1,24 @@
 import styled from "@emotion/styled";
 import Base from "./Base";
-import { Children, Fragment } from "react";
+import { Children, Fragment, ReactElement } from "react";
 
 import { propertyGenerator } from "../helpers";
 
-const getFlexProperties = propertyGenerator([
+export interface FlexProps {
+  column?: boolean;
+  xAlign?: boolean | string;
+  yAlign?: boolean | string;
+  noMarginReset?: boolean;
+  separation?: string;
+  wrap?: boolean | string;
+}
+
+export interface FlexChildProps {
+  xAlignSelf?: boolean | string;
+  yAlignSelf?: boolean | string;
+}
+
+const getFlexProperties = propertyGenerator<FlexProps>([
   ["column", () => "flex-direction: column"],
   [
     "xAlign",
@@ -40,7 +54,7 @@ const getFlexProperties = propertyGenerator([
   ["wrap", { default: "wrap", property: "flex-wrap" }],
 ]);
 
-const getChildFlexProperties = propertyGenerator([
+const getChildFlexProperties = propertyGenerator<FlexProps & FlexChildProps>([
   [
     "xAlignSelf",
     {
@@ -59,20 +73,24 @@ const getChildFlexProperties = propertyGenerator([
   ],
 ]);
 
-export default styled(Base)`
+export default styled(Base)<React.PropsWithChildren<FlexProps>>`
   display: flex;
   ${getFlexProperties}
   ${({ children, column }) => {
     const childrenArray = Children.toArray(children)
-      .filter((elem) => typeof elem !== "string")
-      .map((child) => (child.type === Fragment ? child.props.children || [] : child))
+      .filter((elem) => !["string", "number"].includes(typeof elem))
+      .map((child: ReactElement): ReactElement | ReactElement[] =>
+        child.type === Fragment ? child.props.children || [] : child
+      )
       .flat();
 
     const properties = [];
     for (const [i, { props }] of childrenArray.entries())
       if (props && (props.xAlignSelf || props.yAlignSelf))
         properties.push(`
-        > *:nth-child(${i + 1}) /* emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason */ {
+        > *:nth-child(${
+          i + 1
+        }) /* emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason */ {
           ${getChildFlexProperties({ ...props, column })}
         }
         `);

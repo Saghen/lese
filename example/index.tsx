@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
 
-import html from "./index.html";
+import "./index.html";
 
-import { Base, Flex, Grid, Image } from "../src/";
+import { Base, Flex, Grid, Image } from "../src";
 
-const TestComponent = () => <div></div>
+const TestComponent = () => <div />
 
 render(
   <Flex
@@ -26,8 +26,9 @@ render(
       <Flex xAlignSelf="flex-start">Some test writing</Flex>
       <Flex xAlignSelf="flex-start">More writing</Flex>
       <>
-      <div>Test</div>
+        <div xAlignSelf="flex-start">Test</div>
       </>
+      {[<div xAlignSelf="flex-start">Test</div>]}
     </Flex>
     <Grid columns="400px 400px" yAlign xAlign="start">
       <Image column="2" src="https://i.imgur.com/ojJiFPT.png" responsive />
