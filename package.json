@@ -30,8 +30,8 @@
   },
   "homepage": "https://github.com/Saghen/lese#readme",
   "peerDependencies": {
-    "@emotion/styled": ">=^10.0.0",
-    "@emotion/is-prop-valid": ">=^0.8.6"
+    "@emotion/is-prop-valid": ">=0.8.6",
+    "@emotion/styled": ">=10.0.0"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.17",
