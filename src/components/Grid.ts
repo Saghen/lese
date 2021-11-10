@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 import Base, { BaseProps } from "./Base";
-
-import { Children, Fragment, ReactElement } from "react";
 import { propertyGenerator } from "../helpers";
 
 export interface GridProps extends BaseProps {
@@ -15,7 +13,6 @@ export interface GridProps extends BaseProps {
   xAlign?: boolean | string;
   yAlign?: boolean | string;
   align?: boolean | string;
-  // children?: [React.FC<GridChildProps>];
 }
 
 export interface GridChildProps {
@@ -36,32 +33,7 @@ const getGridProperties = propertyGenerator<GridProps>([
   ["align", { property: "place-items", default: "center center" }],
 ]);
 
-const getChildGridProperties = propertyGenerator<GridChildProps>([
-  ["columnSelf", { property: "grid-column" }],
-  ["rowSelf", { property: "grid-row" }],
-]);
-
 export default styled(Base)<React.PropsWithChildren<GridProps>>`
   display: grid;
   ${getGridProperties}
-  ${({ children }) => {
-    const childrenArray = Children.toArray(children)
-      .filter((elem) => !["string", "number"].includes(typeof elem))
-      .map((child: ReactElement): ReactElement | ReactElement[] =>
-        child.type === Fragment ? child.props.children || [] : child
-      )
-      .flat();
-
-    const properties = [];
-    for (const [i, { props }] of childrenArray.entries())
-      if (props && (props.xAlignSelf || props.yAlignSelf))
-        properties.push(`
-        > *:nth-child(${
-          i + 1
-        }) /* emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason */ {
-          ${getChildGridProperties(props)}
-        }
-        `);
-    return properties;
-  }}
 `;

@@ -20,7 +20,7 @@ export interface PropertyGeneratorOptions<T> {
 
 export type PropertyGeneratorKey<T> = Array<[Extract<keyof T, string>, PropertyGeneratorOptions<T> | PropertyGeneratorHandler<T>] | Extract<keyof T, string>>;
 
-export function propertyGenerator<T>(keys: PropertyGeneratorKey<T>): (props: T) => string {
+export function propertyGenerator<T>(keys: PropertyGeneratorKey<T>): (props: Partial<T>) => string {
   return (props: T) => {
     const properties = [];
     for (const key of keys) {

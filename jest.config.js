@@ -1,3 +1,6 @@
+/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  snapshotSerializers: ["jest-emotion"]
+  preset: "ts-jest",
+  testEnvironment: "jsdom",
+  snapshotSerializers: ["@emotion/jest/serializer"],
 };

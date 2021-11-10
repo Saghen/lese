@@ -1,0 +1,340 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should separate items via the separation prop 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0>*+* {
+  margin-left: 8px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 2`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0>*+* {
+  margin-left: 16px;
+}
+
+.emotion-0>*:first-child {
+  margin-left: 8px;
+}
+
+.emotion-0>*:first-child+* {
+  margin-left: 12px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 3`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0>*+* {
+  margin-left: ...16px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 4`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0>*+* {
+  margin-left: 16px;
+}
+
+.emotion-0>*:first-child {
+  margin-left: 8px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 5`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0>*+* {
+  margin-left: 16px;
+}
+
+.emotion-0>*:nth-last-child(1) {
+  margin-left: 8px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 6`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0>*+* {
+  margin-left: 16px;
+}
+
+.emotion-0>*:nth-last-child(1) {
+  margin-left: 12px;
+}
+
+.emotion-0>*:first-child {
+  margin-left: 8px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 7`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0>*+* {
+  margin-left: 16px;
+}
+
+.emotion-0>*:nth-last-child(2) {
+  margin-left: 12px;
+}
+
+.emotion-0>*:nth-last-child(1) {
+  margin-left: 14px;
+}
+
+.emotion-0>*:first-child {
+  margin-left: 8px;
+}
+
+.emotion-0>*:first-child+* {
+  margin-left: 10px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 8`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0>*+* {
+  margin-top: 8px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 9`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0>*+* {
+  margin-top: 16px;
+}
+
+.emotion-0>*:first-child {
+  margin-top: 8px;
+}
+
+.emotion-0>*:first-child+* {
+  margin-top: 12px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 10`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0>*+* {
+  margin-top: ...16px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 11`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0>*+* {
+  margin-top: 16px;
+}
+
+.emotion-0>*:first-child {
+  margin-top: 8px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 12`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0>*+* {
+  margin-top: 16px;
+}
+
+.emotion-0>*:nth-last-child(1) {
+  margin-top: 8px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 13`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0>*+* {
+  margin-top: 16px;
+}
+
+.emotion-0>*:nth-last-child(1) {
+  margin-top: 12px;
+}
+
+.emotion-0>*:first-child {
+  margin-top: 8px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`should separate items via the separation prop 14`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0>*+* {
+  margin-top: 16px;
+}
+
+.emotion-0>*:nth-last-child(2) {
+  margin-top: 12px;
+}
+
+.emotion-0>*:nth-last-child(1) {
+  margin-top: 14px;
+}
+
+.emotion-0>*:first-child {
+  margin-top: 8px;
+}
+
+.emotion-0>*:first-child+* {
+  margin-top: 10px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;

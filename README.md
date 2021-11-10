@@ -42,148 +42,109 @@ All components (aside from image) inherit from the Base component which includes
 
 ## Base
 
-Contains all of the base props for all other components aside from the image component. Possible prop values are as follows:
+Contains all of the base props for Flex and Grid components. Possible prop values are as follows:
 
-### Text
-
-### `color: String`
-
-Changes the color of the children
-
-### `fontSize: String`
-
-Changes the font size of the children
-
-### `textAlign: Boolean | String`
-
-Aligns the font by default to the center
-
-### Size
-
-### `height: String`
-
-Changes the height of the element. Note: By default, this will use the `height` css property. However, when responsive is enabled, the component will instead use `max-height: ${height}` and `height: 100%` to make the element responsive.
-
-### `width: String`
-
-Changes the width of the element. Note: By default, this will use the `width` css property. However, when responsive is enabled, the component will instead use `max-width: ${width}` and `width: 100%` to make the element responsive.
-
-### `responsive: Boolean`
-
-Modifies the width and height properties to use max-width and max-height to make the element responsive in situations where all the space to reach its maximum width is not avaliable.
-
-### Layout
-
-### `relative: Boolean`
+### `relative: boolean`
 
 Short-hand property for applying `position: relative`
 
-## Flex
+### `padding: string`
 
-The quick and easy to use flex container. Inherits all properties from Base.
+Short-hand property for applying `padding`
 
-### `column: Boolean`
+### `margin: string` 
 
-Sets the flex-direction to column
+Short-hand property for applying `margin`
 
-### `xAlign: Boolean | String`
+## Row/Column
 
-Based on the column boolean, xAlign will automatically switch between justify-content (row) and align-items (column). Sets to "center" by default when set to `true`. Otherwise, it passes the string to the appropriate css property.
+A flex container with `flex-direction: row` or `flex-direction: column` set by default based on the selected element. Includes 3 main abstractions for making flex easier to interact with.
 
-### `yAlign: Boolean | String`
+### `xAlign: boolean | string`
 
-Based on the column boolean, xAlign will automatically switch between align-items (row) and justify-content (column). Sets to "center" by default when set to `true`. Otherwise, it passes the string to the appropriate css property.
+Based on the component (Row or Column), xAlign will automatically switch between justify-content (Row) and align-items (Column). Defaults to "center" when set to `true`. Otherwise, it passes the string to the appropriate css property.
 
-### `separation: String`
+### `yAlign: boolean | string`
 
-Based on the column boolean, separation will use margin-top (column) or margin-left (row) on its immediate children on all but the first child using `* + *`. The value of the string will be passed to the appropriate css property.
+Based on the component (Row or Column), xAlign will automatically switch between align-items (Row) and justify-content (Column). Defaults to "center" when set to `true`. Otherwise, it passes the string to the appropriate css property.
 
-### `resetMargin: Boolean`
+### `separation: string | string[]`
 
-Resets the margins of the immediate children using `> * { margin: 0; }`.
+Based on the component (Row or Column), separation will use margin-top (Column) or margin-left (Row) on its immediate children on all but the first child using `* + *`. The value of the string will be passed to the appropriate css property. When the value is a single CSS length, such as `8px`, all elements are separated based on this value. When multiple values are provided in the form of a string array or space delimited string, each index will correspond to the separation of one element. Additionally, a rest operator (`...`) can be used anywhere in the string for defaulting a separation value.
 
-### `wrap: Boolean | String`
+```tsx
+() => (
+  <Row separation="8px 12px">
+    <div>a</div>
+    {/* Separated by 8px */}
+    <div>b</div>
+    {/* Separated by 12px */}
+    <div>c</div>
+    {/* No separation */}
+    <div>d</div>
+  </Row>
+)
+```
+
+```tsx
+() => (
+  <Row separation="8px ...10px 12px">
+    <div>a</div>
+    {/* Separated by 8px */}
+    <div>b</div>
+    {/* Separated by 10px */}
+    <div>c</div>
+    {/* Separated by 10px */}
+    <div>d</div>
+    {/* Separated by 12px */}
+    <div>e</div>
+  </Row>
+)
+```
+
+
+### `wrap: boolean | string`
 
 Sets the flex-wrap css property. Defaults to "wrap" when set to `true`.
 
-## Flex Child Properties
-
-The flex component also supports properties on child elements
-
-### `xAlign: Boolean | String`
-
-Based on the column boolean, xAlign will automatically switch between justify-self (row) and align-self (column). Sets to "center" by default when set to `true`. Otherwise, it passes the string to the appropriate css property.
-
-### `yAlign: Boolean | String`
-
-Based on the column boolean, xAlign will automatically switch between align-self (row) and justify-self (column). Sets to "center" by default when set to `true`. Otherwise, it passes the string to the appropriate css property.
-
 ## Grid
 
-### `columns: String`
+### `columns: string`
 
 Shorthand for `grid-template-columns`
 
-### `rows: String`
+### `rows: string`
 
 Shorthand for `grid-template-rows`
 
-### `autoColumns: String`
+### `autoColumns: string`
 
 Shorthand for `grid-auto-columns`
 
-### `autoRows: String`
+### `autoRows: string`
 
 Shorthand for `grid-auto-rows`
 
-### `columnGap: String`
+### `columnGap: string`
 
 Shorthand for `grid-column-gap`
 
-### `rowGap: String`
+### `rowGap: string`
 
 Shorthand for `grid-row-gap`
 
-### `gap: String`
+### `gap: string`
 
 Shorthand for `grid-gap`
 
-### `xAlign: Boolean | String`
+### `xAlign: boolean | string`
 
 Shorthand for `justify-items`. Defaults to `center` when set to true.
 
-### `yAlign: Boolean | String`
+### `yAlign: boolean | string`
 
 Shorthand for `align-items`. Defaults to `center` when set to true.
 
-### `align: Boolean | String`
+### `align: boolean | string`
 
 Shorthand for `place-items`. Defaults to `center center` when set to true.
-
-## Grid Child Properties
-
-The grid component also supports properties on child elements
-
-### `columnSelf: String`
-
-Shorthand for `grid-column`
-
-### `rowSelf: String`
-
-Shorthand for `grid-row`
-
-## Image
-
-A basic responsive image component
-
-### `responsive: Boolean`
-
-Sets the `max-width` of the image to `100%`
-
-### `center: Boolean`
-
-Sets the `object-position` to `center`
-
-### `cover: Boolean`
-
-Sets the `object-fit` to `cover`

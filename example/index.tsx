@@ -1,39 +1,34 @@
 import React from "react";
 import { render } from "react-dom";
+// import styled from "@emotion/styled";
 
-import "./index.html";
+import './index.html'
 
-import { Base, Flex, Grid, Image } from "../src";
+import { Column, Grid, Row } from "../src";
 
-const TestComponent = () => <div />
+const TestComponent = () => <div />;
 
 render(
-  <Flex
+  <Column
     separation="16px"
-    column
     xAlign="center"
     yAlign="center"
     wrap
-    fontSize="1.2em"
-    style={{ margin: "auto" }}
-    color="#000"
-    textAlign="center"
     relative
     margin="16px"
     padding="16px"
   >
-    <Flex column xAlign separation="24px">
-      <Flex xAlignSelf="flex-start">Some test writing</Flex>
-      <Flex xAlignSelf="flex-start">More writing</Flex>
+    <Column xAlign separation="24px ...10px 50px">
+      <Row>Some test writing</Row>
+      <Row>More writing</Row>
       <>
-        <div xAlignSelf="flex-start">Test</div>
+        <div>Test</div>
       </>
-      {[<div xAlignSelf="flex-start">Test</div>]}
-    </Flex>
+      {[<div>Test</div>]}
+    </Column>
     <Grid columns="400px 400px" yAlign xAlign="start">
-      <Image column="2" src="https://i.imgur.com/ojJiFPT.png" responsive />
       <TestComponent></TestComponent>
     </Grid>
-  </Flex>,
+  </Column>,
   document.querySelector("#root")
 );
