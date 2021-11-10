@@ -54,7 +54,7 @@ const separationHandler = ({ column, separation }: FlexProps) => {
         getStyleBlock(`*:nth-last-child(${endingSeparations.length - i})`, separation)
       ),
       ...startingSeparations.map((separation, i) =>
-        getStyleBlock(`*:first-child ${new Array(i).fill("+ *").join(" ")}`, separation)
+        getStyleBlock(`*:first-child ${new Array(i + 1).fill("+ *").join(" ")}`, separation)
       ),
     ].join("\n");
   }
