@@ -16,7 +16,7 @@ export interface FlexProps {
 const ignoreFlag =
   "/* emotion-disable-server-rendering-unsafe-selector-warning-please-do-not-use-this-the-warning-exists-for-a-reason */";
 
-const separationHandler = ({ column, separation }: FlexProps) => {
+export const seperationProp = ({ column, separation }: Pick<FlexProps, 'column' | 'separation'>) => {
   const isString = typeof separation === "string";
   const isStringArray = Array.isArray(separation);
   if (!isString && !isStringArray) {
@@ -90,7 +90,7 @@ const getFlexProperties = propertyGenerator<FlexProps>([
       handler: ({ column, yAlign }) => (column ? `justify-content: ${yAlign}` : `align-items: ${yAlign}`),
     },
   ],
-  ["separation", separationHandler],
+  ["separation", seperationProp],
   ["wrap", { default: "wrap", property: "flex-wrap" }],
 ]);
 
