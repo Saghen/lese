@@ -1,13 +1,13 @@
-import Base, { BaseProps } from "./components/Base";
-import Flex, { Row, Column, FlexProps } from "./components/Flex";
-import Grid, { GridProps, GridChildProps } from "./components/Grid";
+import Base, { BaseProps } from './components/Base'
+import Flex, { Row, Column, FlexProps, separationProp, SeparationProps } from './components/Flex'
+import Grid, { GridProps, GridChildProps } from './components/Grid'
 
 import {
   propertyGenerator,
   PropertyGeneratorHandler,
   PropertyGeneratorKey,
   PropertyGeneratorOptions,
-} from "./helpers";
+} from './helpers'
 
 export {
   Base,
@@ -23,4 +23,6 @@ export {
   PropertyGeneratorHandler,
   PropertyGeneratorKey,
   PropertyGeneratorOptions,
-};
+  separationProp,
+  SeparationProps,
+}
